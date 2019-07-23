@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="server.jar" default="main" xmlns:redline="antlib:org.redline_rpm">
+	<property name="rpm.path" value="../rpms" />
+	<property file="build_info.properties" />
+	<property name="build.number" value="${build.major.number}.${build.minor.number}.${build.revision.number}" />
+	<property name="dir.buildfile" value="."/>
+	<property name="dir.workspace" value="${dir.buildfile}/../../../.."/>
+	<property name="dir.jarfile" value="${dir.workspace}/restlet-test/restlet-server-test/dist"/>
+
+	<target name="current-number">
+		<echo>Current build version:v${build.number}</echo>
+	</target>
+
+	<target name="compile">
+		<antcall target="revision">
+		</antcall>
+	</target>
+
+	<target name="dist">
+		<antcall target="minor">
+		</antcall>
+	</target>
+
+	<target name="revision">
+		<propertyfile file="build_info.properties">
+			<entry key="build.revision.number" type="int" operation="+" value="1" pattern="000" />
+		</propertyfile>
+	</target>
+
+	<target name="minor">
+		<propertyfile file="build_info.properties">
+			<entry key="build.minor.number" type="int" operation="+" value="1" pattern="0" />
+			<entry key="build.revision.number" type="int" value="0" pattern="000" />
+		</propertyfile>
+	</target>
+
+	<target name="major">
+		<propertyfile file="build_info.properties">
+			<entry key="build.major.number" type="int" operation="+" value="1" pattern="0" />
+			<entry key="build.minor.number" type="int" value="0" pattern="0" />
+			<entry key="build.revision.number" type="int" value="0" pattern="000" />
+		</propertyfile>
+	</target>
+
+	<target name="all">
+		<propertyfile file="build_info.properties">
+			<entry key="build.major.number" type="int" operation="+" value="1" pattern="0" />
+			<entry key="build.minor.number" type="int" operation="+" value="1" pattern="0" />
+			<entry key="build.revision.number" type="int" operation="+" value="1" pattern="000" />
+		</propertyfile>
+	</target>
+
+	<target name="main">
+		<tstamp>
+			<format property="builtat" pattern="yyyy-MM-dd HH:mm" />
+		</tstamp>
+		<jar destfile="${dir.jarfile}/server.jar" filesetmanifest="skip">
+			<manifest>
+				<attribute name="Built-Date" value="${builtat}" />
+				<attribute name="Created-By" value="Sean" />
+				<attribute name="RestletServer-Version" value="v${build.number}" />
+				<attribute name="Main-Class" value="com.example.server.Main"/>
+				<attribute name="Class-Path" value="." />
+			</manifest>
+			<fileset dir="${dir.workspace}/restlet-test/restlet-server-test/bin"/>
+			<fileset dir="${dir.workspace}/commons-daemon/target/classes"/>
+			<fileset dir="${dir.workspace}/commons-daemon/target/test-classes"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/jul-to-slf4j-1.6.2.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/log4j-1.2.17.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/slf4j-api-1.7.5.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/slf4j-log4j12-1.7.5.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/commons-lang-2.4.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.apispark.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.json.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.raml.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.swagger.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.xml.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.json_2.0/org.json.jar"/>
+		</jar>
+	</target>
+
+	<target name="pack-dev.restlet-server-test">
+		<redline:rpm group="restlet-server-test" name="restlet-server-test-dev" version="${build.number}" destination="${rpm.path}">
+			<!--<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/server.properties" filemode="644" username="root" group="root" />-->
+			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/log4j.xml" filemode="644" username="root" group="root" />
+			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/check_version.sh" filemode="755" username="root" group="root" />
+			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/server.sh" filemode="755" username="root" group="root" />
+			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../common/jsvc" filemode="755" username="root" group="root" />
+			<zipfileset prefix="/root/workspace/restlet-server-test" filemode="644" file="${dir.jarfile}/server.jar" />
+		</redline:rpm>
+	</target>
+
+	<property name="dev-ip1" value="{IP}" /> <!-- IP -->
+	<property name="dev-user" value="{USER}" /> <!-- User -->
+	<property name="dev-password" value="{PASSWORD}" /> <!-- Password -->
+	<property name="dev-file" value="restlet-server-test-dev-${build.number}-1.noarch.rpm" />
+
+	<target name="dev-upload">
+		<scp todir="${dev-user}@${dev-ip1}:/home/gclouddev" password="${dev-password}" verbose="true" trust="true">
+			<fileset file="${rpm.path}/${dev-file}" />
+		</scp>
+	</target>
+
+	<target name="dev-install">
+		<sshexec host="${dev-ip1}" port="22" trust="true" username="${dev-user}" password="${dev-password}" command="rpm -Uvf --force /home/gclouddev/${dev-file}" timeout="10000" failonerror="false" />
+	</target>
+
+	<target name="dev-restart">
+		<sshexec host="${dev-ip1}" port="22" trust="true" username="${dev-user}" password="${dev-password}" command="/root/workspace/restlet-server-test/server.sh stop" timeout="10000" failonerror="false" />
+		<sshexec host="${dev-ip1}" port="22" trust="true" username="${dev-user}" password="${dev-password}" command="/root/workspace/restlet-server-test/server.sh start" timeout="10000" failonerror="false" />
+	</target>
+</project>
