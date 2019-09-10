@@ -7,6 +7,12 @@
 	<property name="dir.workspace" value="${dir.buildfile}/../../../.."/>
 	<property name="dir.jarfile" value="${dir.workspace}/restlet-test/restlet-server-test/dist"/>
 
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	  <classpath>
+	    <pathelement location="C:\Users\GM1702850\.p2\pool\plugins\org.apache.ant_1.10.5.v20190526-1402\lib/ant-contrib-1.0b3.jar"/>
+	  </classpath>
+	</taskdef>
+	
 	<target name="current-number">
 		<echo>Current build version:v${build.number}</echo>
 	</target>
@@ -75,6 +81,7 @@
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.raml.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.swagger.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.xml.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jackson.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.json_2.0/org.json.jar"/>
 		</jar>
@@ -91,9 +98,9 @@
 		</redline:rpm>
 	</target>
 
-	<property name="dev-ip1" value="{IP}" /> <!-- IP -->
-	<property name="dev-user" value="{USER}" /> <!-- User -->
-	<property name="dev-password" value="{PASSWORD}" /> <!-- Password -->
+	<property name="dev-ip1" value="45.115.155.125" /> <!-- IP -->
+	<property name="dev-user" value="root" /> <!-- User -->
+	<property name="dev-password" value="gabia_rkqldk2017" /> <!-- Password -->
 	<property name="dev-file" value="restlet-server-test-dev-${build.number}-1.noarch.rpm" />
 
 	<target name="dev-upload">

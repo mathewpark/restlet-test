@@ -21,7 +21,7 @@
 		<param name="append" value="true" />
 		<layout class="org.apache.log4j.PatternLayout">
 		<!-- The default pattern: Date Priority [Category] Message\n -->
-			<param name="ConversionPattern" value="LB-Server %m" />
+			<param name="ConversionPattern" value="restlet-server-test %m" />
 		</layout>
 	</appender>
 

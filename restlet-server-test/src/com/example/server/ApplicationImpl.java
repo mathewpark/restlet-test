@@ -12,7 +12,7 @@ public class ApplicationImpl extends SwaggerApplication {
 		
 		router.attach("ping", ServerResourceImpl.class);
 
-		attachSwaggerSpecificationRestlet(router, "api-docs");
+//		attachSwaggerSpecificationRestlet(router, "api-docs");
 
 		return router;
 	}

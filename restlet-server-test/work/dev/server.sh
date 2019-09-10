@@ -11,7 +11,7 @@ JSVC=$DAEMON_HOME/jsvc
 
 USER=root
 
-JAVA_HOME=$(dirname $(dirname $(dirname  $(readlink -f  /usr/bin/java))))/
+JAVA_HOME=/usr/java/jdk1.8.0_221
 
 PID_FILE=$DAEMON_HOME/daemon_$JAR_NAME.pid
 OUT_FILE=$DAEMON_HOME/daemon_$JAR_NAME.out
@@ -48,6 +48,7 @@ function start {
     # To get a debug of jsvc.
     #-debug \
 }
+
 function stop {
 	echo "stop restlet-server-test"
     #
