@@ -84,13 +84,28 @@
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jackson.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.json_2.0/org.json.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jackson.jar"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.raml_0.8/org.raml.parser.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.core.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.annotations.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.csv.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.databind.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jaxb.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jsonschema.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.smile.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.xml.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.yaml.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.wordnik.swagger.annotations_1.5/com.wordnik.swagger.annotations.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.wordnik.swagger.core_1.5/com.wordnik.swagger.core.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.wordnik.swagger.models_1.5/com.wordnik.swagger.models.jar"/>
 		</jar>
 	</target>
 
 	<target name="pack-dev.restlet-server-test">
 		<redline:rpm group="restlet-server-test" name="restlet-server-test-dev" version="${build.number}" destination="${rpm.path}">
 			<!--<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/server.properties" filemode="644" username="root" group="root" />-->
-			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/log4j.xml" filemode="644" username="root" group="root" />
+			<rpmfileset prefix="/root/workspace/restlet-server-test/conf/" config="true" noreplace="false" file="../dev/log4j.xml" filemode="644" username="root" group="root" />
+			<rpmfileset prefix="/root/workspace/restlet-server-test/conf/" config="true" noreplace="false" file="../dev/server.properties" filemode="644" username="root" group="root" />
 			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/check_version.sh" filemode="755" username="root" group="root" />
 			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../dev/server.sh" filemode="755" username="root" group="root" />
 			<rpmfileset prefix="/root/workspace/restlet-server-test" config="true" noreplace="false" file="../common/jsvc" filemode="755" username="root" group="root" />

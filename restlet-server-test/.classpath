@@ -18,5 +18,20 @@
 	<classpathentry kind="lib" path="lib/Restlet/org.json_2.0/org.json.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="lib/Restlet/org.restlet.ext.jackson.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.core.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.annotations.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.csv.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.databind.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jaxb.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jsonschema.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.smile.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.xml.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.yaml.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.wordnik.swagger.annotations_1.5/com.wordnik.swagger.annotations.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.wordnik.swagger.core_1.5/com.wordnik.swagger.core.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/com.wordnik.swagger.models_1.5/com.wordnik.swagger.models.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/org.raml_0.8/org.raml.parser.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/org.restlet.ext.jdbc.jar"/>
+	<classpathentry kind="lib" path="lib/Restlet/org.mongodb_2.11/org.mongodb.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
