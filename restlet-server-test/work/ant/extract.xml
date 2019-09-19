@@ -57,6 +57,52 @@
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.wordnik.swagger.core_1.5/com.wordnik.swagger.core.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.wordnik.swagger.models_1.5/com.wordnik.swagger.models.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.raml_0.8/org.raml.parser.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.spring.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.simpleframework_5.1/org.simpleframework.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.simpleframework.xml_2.7/org.simpleframework.xml.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.springframework_3.2/org.springframework.beans.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.springframework_3.2/org.springframework.context.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.springframework_3.2/org.springframework.core.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.springframework_3.2/org.springframework.expression.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.springframework_3.2/org.springframework.web.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.springframework_3.2/org.springframework.webmvc.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.yaml.snakeyaml_1.13/org.yaml.snakeyaml.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.example.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.atom.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.crypto.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.e4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.emf.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.fileupload.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.freemarker.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.gson.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.guice.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.gwt.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.html.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.httpclient.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jaas.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.javamail.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jaxb.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jaxrs.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jdbc.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jetty.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jibx.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.jsslutils.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.lucene.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.nio.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.oauth.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.odata.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.openid.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.rdf.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.rome.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.sdc.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.simple.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.sip.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.slf4j.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.thymeleaf.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.velocity.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.wadl.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.ext.xstream.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/org.restlet.test.jar"/>
         </jar>
     </target>
 </project>

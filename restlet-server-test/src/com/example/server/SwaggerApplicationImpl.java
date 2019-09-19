@@ -7,26 +7,7 @@ import org.restlet.ext.swagger.SwaggerApplication;
 import org.restlet.routing.Router;
 
 public class SwaggerApplicationImpl extends SwaggerApplication {
-	/*
-     * Define role names
-     */
-    public static final String ROLE_ADMIN = "admin";
-
-    public static final String ROLE_OWNER = "owner";
-
-    public static final String ROLE_USER = "user";
-
-    /*
-     * Define route constants
-     */
-    public static final String ROUTE_COMPANIES = "/companies";
-
-    public static final String ROUTE_CONTACTS = "/contacts";
-
-    /*
-     * Define SQL State code constants
-     */
-    public static final String SQL_STATE_23000_DUPLICATE = "23000";
+//public class SwaggerApplicationImpl extends Application {
     
 	@Override
 	public Restlet createInboundRoot() {
@@ -35,12 +16,12 @@ public class SwaggerApplicationImpl extends SwaggerApplication {
 		
 		router.attach("ping", ServerResourceImpl.class);
 
-//		attachSwaggerSpecificationRestlet(router, "api-docs");
+		attachSwaggerSpecificationRestlet(router, "api-docs");
 
-	    // Configuring Swagger 2 support
-	    Swagger2SpecificationRestlet swagger2SpecificationRestlet = new Swagger2SpecificationRestlet(this);
-	    swagger2SpecificationRestlet.setBasePath("http://45.115.155.125:8889/");
-	    swagger2SpecificationRestlet.attach(router, "/api-docs");
+//	    // Configuring Swagger 2 support
+//	    Swagger2SpecificationRestlet swagger2SpecificationRestlet = new Swagger2SpecificationRestlet(this);
+//	    swagger2SpecificationRestlet.setBasePath("http://localhost:8889/api-docs");
+//	    swagger2SpecificationRestlet.attach(router);
 
 	    return router;
 	}
