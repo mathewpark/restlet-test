@@ -1,5 +1,7 @@
 package com.example.server;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.logging.Handler;
 import java.util.logging.LogManager;
 
@@ -11,6 +13,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 import org.restlet.Component;
 import org.restlet.data.Parameter;
 import org.restlet.data.Protocol;
+import org.restlet.service.CorsService;
 import org.restlet.util.Series;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
@@ -37,13 +40,21 @@ public class DaemonImpl implements Daemon {
 
 		// Add a new HTTP server listening on port#.
 		restletComponent.getServers().add(Protocol.HTTP, C.SERVER_PORT);
+		
 		Series<Parameter> parameters = restletComponent.getServers().getContext().getParameters();
 		parameters.add("maxThreads", "1024");
 		parameters.add("tracing", "true");
 
 		// clientKeepAlive, keepAlive
 
-		restletComponent.getDefaultHost().attach("/", new SwaggerApplicationImpl());
+		CorsService corsService = new CorsService();         
+		corsService.setAllowedOrigins(new HashSet(Arrays.asList("*")));
+		corsService.setAllowedCredentials(true);
+		
+		SwaggerApplicationImpl application = new SwaggerApplicationImpl();
+		application.getServices().add(corsService);
+		
+		restletComponent.getDefaultHost().attach("/", application);
 
 		log4j.info("Daemon initialized.");
 	}
