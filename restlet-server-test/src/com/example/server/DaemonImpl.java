@@ -10,6 +10,7 @@ import org.apache.commons.daemon.DaemonContext;
 import org.apache.commons.daemon.DaemonInitException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import org.restlet.Application;
 import org.restlet.Component;
 import org.restlet.data.Parameter;
 import org.restlet.data.Protocol;
@@ -51,7 +52,7 @@ public class DaemonImpl implements Daemon {
 		corsService.setAllowedOrigins(new HashSet(Arrays.asList("*")));
 		corsService.setAllowedCredentials(true);
 		
-		SwaggerApplicationImpl application = new SwaggerApplicationImpl();
+		Application application = new Swagger2ApplicationImpl();
 		application.getServices().add(corsService);
 		
 		restletComponent.getDefaultHost().attach("/", application);
