@@ -12,7 +12,7 @@ public class SwaggerApplicationImpl extends SwaggerApplication {
 		
 		router.attach("admin/pings", ServerResourceImpl.class);
 
-		attachSwaggerSpecificationRestlet(router, "v2/api-docs");
+		attachSwaggerSpecificationRestlet(router, "/api-docs");
 
 	    return router;
 	}
