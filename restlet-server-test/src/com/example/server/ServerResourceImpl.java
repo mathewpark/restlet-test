@@ -30,7 +30,8 @@ public class ServerResourceImpl extends ServerResource {
 	
 	@Post("json")
 //	public Representation webPost(JsonRepresentation entity) {
-	public Representation webPost(String json) {
+//	public Representation webPost(String json) {
+	public Representation webPost(Ping json) {
 		Representation rep = getRequestEntity();
 		
 		JSONObject data = null;
@@ -45,7 +46,8 @@ public class ServerResourceImpl extends ServerResource {
 //			}
 //		} catch (Exception e) { log4j.error(Throwables.getStackTraceAsString(e)); }
 		
-		data = new JSONObject(json);
+//		data = new JSONObject(json);
+		data = json.toJson();
 		
 		log4j.debug("@POST Method called.");
 		log4j.debug(String.format("body data=%s", data == null ? "null" : data.toString()));
