@@ -7,18 +7,19 @@ import org.restlet.routing.Router;
 
 public class Swagger2ApplicationImpl extends Application {
     
+	@Override
 	public Restlet createInboundRoot() {
 		// Create a router Restlet that defines routes.
 		Router router = new Router(getContext());
 		
-		router.attach("admin/pings", ServerResourceImpl.class);
+		router.attach("/admin/pings", ServerResourceImpl.class);
 
 	    // Configuring Swagger 2 support
 	    Swagger2SpecificationRestlet swagger2SpecificationRestlet = new Swagger2SpecificationRestlet(this);
-	    swagger2SpecificationRestlet.setBasePath("http://localhost:8889/");
-	    swagger2SpecificationRestlet.attach(router);
+	    swagger2SpecificationRestlet.setBasePath("http://myapp.com:8889/");
+	    swagger2SpecificationRestlet.attach(router, "/docs");
 	    
-	    router.attach(swagger2SpecificationRestlet);
+//	    router.attach(swagger2SpecificationRestlet);
 
 	    return router;
 	}

@@ -10,7 +10,7 @@ public class SwaggerApplicationImpl extends SwaggerApplication {
 		// Create a router Restlet that defines routes.
 		Router router = new Router(getContext());
 		
-		router.attach("admin/pings", ServerResourceImpl.class);
+		router.attach("/admin/pings", ServerResourceImpl.class);
 
 		attachSwaggerSpecificationRestlet(router, "/api-docs");
 

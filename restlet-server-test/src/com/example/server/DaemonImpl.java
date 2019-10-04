@@ -52,10 +52,11 @@ public class DaemonImpl implements Daemon {
 		corsService.setAllowedOrigins(new HashSet(Arrays.asList("*")));
 		corsService.setAllowedCredentials(true);
 		
+//		SwaggerApplicationImpl application = new SwaggerApplicationImpl();
 		Swagger2ApplicationImpl application = new Swagger2ApplicationImpl();
 		application.getServices().add(corsService);
 		
-		restletComponent.getDefaultHost().attach("/", application);
+		restletComponent.getDefaultHost().attach(application);
 
 		log4j.info("Daemon initialized.");
 	}
