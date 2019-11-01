@@ -63,7 +63,7 @@
 				<attribute name="Class-Path" value="." />
 			</manifest>
 			<fileset dir="${dir.workspace}/restlet-test/restlet-server-test/bin"/>
-			<fileset dir="${dir.workspace}/commons-daemon/bin"/>
+			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/commons-daemon-1.0.5.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/jul-to-slf4j-1.6.2.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/log4j-1.2.17.jar"/>
 			<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/log/slf4j-api-1.7.5.jar"/>
@@ -107,9 +107,9 @@
 		</redline:rpm>
 	</target>
 
-	<property name="dev-ip1" value="{IP}" /> <!-- IP -->
-	<property name="dev-user" value="{USER}" /> <!-- User -->
-	<property name="dev-password" value="{PASSWORD}" /> <!-- Password -->
+	<property name="dev-ip1" value="10.222.223.17" /> <!-- IP -->
+	<property name="dev-user" value="root" /> <!-- User -->
+	<property name="dev-password" value="gabia_rkqldk2017" /> <!-- Password -->
 	<property name="dev-file" value="restlet-server-test-dev-${build.number}-1.noarch.rpm" />
 
 	<target name="dev-upload">
