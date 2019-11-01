@@ -89,11 +89,7 @@
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.annotations.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.csv.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.databind.jar"/>
-<<<<<<< HEAD
         	<zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jaxb.jar"/>
-=======
-            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jaxb.jar"/>
->>>>>>> refs/remotes/origin/master
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.jsonschema.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.smile.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/restlet-test/restlet-server-test/lib/Restlet/com.fasterxml.jackson_2.4/com.fasterxml.jackson.xml.jar"/>
@@ -117,11 +113,8 @@
 		</redline:rpm>
 	</target>
 
-<<<<<<< HEAD
 	<property name="dev-ip1" value="10.222.223.17" /> <!-- IP -->
-=======
 	<property name="dev-ip1" value="45.115.155.125" /> <!-- IP -->
->>>>>>> refs/remotes/origin/master
 	<property name="dev-user" value="root" /> <!-- User -->
 	<property name="dev-password" value="gabia_rkqldk2017" /> <!-- Password -->
 	<property name="dev-file" value="restlet-server-test-dev-${build.number}-1.noarch.rpm" />
