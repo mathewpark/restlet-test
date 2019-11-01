@@ -17,7 +17,7 @@ public class Swagger2ApplicationImpl extends Application {
 	    Swagger2SpecificationRestlet swagger2SpecificationRestlet = new Swagger2SpecificationRestlet(this);
 	    swagger2SpecificationRestlet.setBasePath("http://myapp.com:8889/");
 	    swagger2SpecificationRestlet.attach(router, "/docs");
-
-	    return router;
+	    
+		return router;
 	}
 }
